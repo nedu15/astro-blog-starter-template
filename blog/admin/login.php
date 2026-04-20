@@ -6,6 +6,12 @@
  * @version 1.0.0
  */
 
+// Check if blog is installed
+if (!file_exists(dirname(__DIR__) . '/.installed')) {
+    header('Location: ../installer/index.php');
+    exit;
+}
+
 // Start session
 if (session_status() === PHP_SESSION_NONE) {
     session_start();

@@ -1,0 +1,18 @@
+# Prevent direct access to installer files
+Options -Indexes
+Order Deny,Allow
+Deny from all
+Allow from env=allow
+
+# Allow access only to index.php
+<Files "index.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Prevent execution of other PHP files
+<FilesMatch "\.(php|phtml|php3|php4|php5)$">
+    <If "!%{REQUEST_URI} =~ m#^/installer/index\.php$#">
+        Require all denied
+    </If>
+</FilesMatch>
