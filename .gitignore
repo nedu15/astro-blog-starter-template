@@ -1,25 +1,36 @@
-```gitignore
-# Logs
-*.log
+```
+# Compiled and build artifacts
+*.pyc
+__pycache__/
 
-# Environment files
+# Dependencies
+node_modules/
+venv/
+.venv/
 .env
 .env.local
-.env.*
+*.env.*
 
-# Uploads and generated content
-blog/uploads/*
-!blog/uploads/.htaccess
-
-# Cache and temporary files
+# Logs and temp files
+*.log
 *.tmp
 *.swp
 
-# IDE and editor files
+# Editors
 .vscode/
 .idea/
 
-# OS specific files
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# Build directories
+dist/
+build/
+target/
 ```
